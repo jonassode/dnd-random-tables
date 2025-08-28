@@ -236,6 +236,166 @@
     {
       "title": "Religion: Shrine to Bhaal, Destroyed",
       "description": "Nothing happens."
+    },
+    {
+      "title": "Trap: Pitfall (DC10 Dex)",
+      "description": "DC10 Dexterity check or 1D6 bludgeoning damage, pit fall."
+    },
+    {
+      "title": "Trap: Pitfall (DC15 Dex)",
+      "description": "DC15 Dexterity check or 1D8 bludgeoning damage, pit fall."
+    },
+    {
+      "title": "Trap: Pitfall (DC20 Dex)",
+      "description": "DC20 Dexterity check or 1D12 bludgeoning damage, pit fall."
+    },
+    {
+      "title": "Trap: Snare (DC10 Perception)",
+      "description": "DC10 Perception check or snared, 1D6 bludgeoning damage if cut loose without factoring in landing."
+    },
+    {
+      "title": "Trap: Snare (DC15 Perception)",
+      "description": "DC15 Perception check or snared, 1D6 bludgeoning damage if cut loose without factoring in landing."
+    },
+    {
+      "title": "Trap: Snare (DC20 Perception)",
+      "description": "DC20 Perception check or snared, 1D6 bludgeoning damage if cut loose without factoring in landing."
+    },
+    {
+      "title": "Trap: Net (DC15 Perception)",
+      "description": "DC15 Perception check or whole party snared by net, roll combat encounter."
+    },
+    {
+      "title": "Trap: Cupcake Pitfall",
+      "description": "A cupcake lays in the middle of the road. If the party approaches, they trigger a pitfall into spikes. 3D6 piercing damage."
+    },
+    {
+      "title": "Trap: Magic Rune",
+      "description": "Magic rune (DC15 Perception to detect) triggers, paralyzing party. Roll for a combat encounter."
+    },
+    {
+      "title": "Trap: Hobgoblin Door",
+      "description": "Door in the middle of the path. If opened, a Hobgoblin is on the other side and gets a surprise attack. If walked around, the Hobgoblin flees."
+    },
+    {
+      "title": "Riddle: Tail and Head",
+      "description": "An old man asks: 'I have a tail, but no body. I have a head, but no brain. What am I?' (Answer: coins, 50gp reward)"
+    },
+    {
+      "title": "Riddle: Running Around Waterdeep",
+      "description": "An old man asks: 'What is running around Waterdeep, yet never truly moving?' (Answer: The wall, Healing potion reward per player)"
+    },
+    {
+      "title": "Riddle: Dry Rivers",
+      "description": "An old man asks: 'My rivers are dry, my forests have no trees, my towns are flat and empty, and my roads cannot be walked on. What am I?' (Answer: A map. The party's journey is shortened)"
+    },
+    {
+      "title": "Riddle: Two Bodies",
+      "description": "An old man asks: 'Two bodies have I, though both joined in one. The more still I stand, the quicker I run. What am I?' (Answer: An hourglass. Time slows down if they get it, and immediately skips to night if they don’t)"
+    },
+    {
+      "title": "Riddle: Ear That Cannot Hear",
+      "description": "An old man asks: 'What kind of ear cannot hear?' (Answer: An ear of corn. Potion of Cure Silence, everyone deafened if they don’t get it)"
+    },
+    {
+      "title": "Riddle: Four Wheels and Flies",
+      "description": "An old man asks: 'What has four wheels and flies?' (Answer: A garbage wagon. Potion of flight if correct, attacked by Stirges if they don’t get it)"
+    },
+    {
+      "title": "Hidden Chest: Gold Ring",
+      "description": "A DC10 Perception check spots a small chest hidden in a tree. It contains a gold ring worth 20gp."
+    },
+    {
+      "title": "Hidden Chest: 44gp",
+      "description": "A DC15 Perception check spots a small chest hidden in a tree. It contains 44gp."
+    },
+    {
+      "title": "Hidden Chest: +1 Short Sword",
+      "description": "A DC20 Perception check spots a chest hidden in a tree. It contains a +1 Short Sword."
+    },
+    {
+      "title": "Hidden Chest: Dead Mouse",
+      "description": "A DC10 Perception check spots a small chest hidden in a tree. It contains a dead mouse."
+    },
+    {
+      "title": "Strong Storm",
+      "description": "A strong storm picks up."
+    },
+    {
+      "title": "Random Cow",
+      "description": "The party finds a random cow. No amount of investigation reveals anything of significance about the cow or where it came from."
+    },
+    {
+      "title": "Stranger Escort (Reward)",
+      "description": "A stranger asks to be escorted to the nearest town. If the party agrees, the stranger gives them 100gp upon delivery."
+    },
+    {
+      "title": "Excited Gnomes",
+      "description": "A group of excited gnomes bounce past the party. If the party is polite to them, one gives them a useless gizmo that makes a chirping noise when wound up."
+    },
+    {
+      "title": "Man Trapped Under Log (Check)",
+      "description": "A man is trapped under a log. If the party helps him, do a DC15 check. A failure drops the log and crushes the man. He has nothing of value on him, but the saviour gets inspiration if they succeed."
+    },
+    {
+      "title": "Man Buried to Neck",
+      "description": "A man is buried in the road up to his neck, with the ground around him undisturbed. If the party helps him, the head pops out the ground and crawls off on spider legs, cackling. The party takes a DC14 Wisdom saving throw, taking 1D10 psychic damage on a failure."
+    },
+    {
+      "title": "Dragon Overhead",
+      "description": "An enormous dragon flies over head."
+    },
+    {
+      "title": "Hidden Caltrops",
+      "description": "A DC10 Perception check spots caltrops over the floor which do 1D4 piercing damage to the party if they don’t spot them."
+    },
+    {
+      "title": "Drunken Dwarf Wrestling",
+      "description": "A drunken dwarf challenges the strongest looking party member to a wrestling match. A DC15 Strength check beats her, and she gives the party member 5gp. The party member gains a level of exhaustion on a failure."
+    },
+    {
+      "title": "Useless Road Sign",
+      "description": "A road sign points back to wherever the party came from, but is otherwise useless."
+    },
+    {
+      "title": "Vagrant Asks for Food",
+      "description": "A vagrant asks for food. Nothing happens if they give him some."
+    },
+    {
+      "title": "Vagrant Asks for Money (No Effect)",
+      "description": "A vagrant asks for money. Nothing happens if they give him some."
+    },
+    {
+      "title": "Vagrant Asks for Money (Triple Back)",
+      "description": "A vagrant asks for money. They get triple what they give back if they give him some."
+    },
+    {
+      "title": "Owlbear Tracks",
+      "description": "The party finds the tracks of an Owlbear going across the road (DC10 Nature/Survival)."
+    },
+    {
+      "title": "Ranger Gives Correct Directions",
+      "description": "A local ranger gives the party directions to their next destination, shorting their journey."
+    },
+    {
+      "title": "Mirror Image Party",
+      "description": "A mirror image of the party walks towards them, but disappears before reaching them."
+    },
+    {
+      "title": "Pursued by Bush",
+      "description": "The party notices that they are being followed by a bush, which runs into the forest when they attempt to investigate. If they pursue, they find a goblin, that throws a gold coin at them to make them go away."
+    },
+    {
+      "title": "Stranger Tells Sins",
+      "description": "A stranger on the road tells each PC to repent of their sins. He knows details."
+    },
+    {
+      "title": "Confetti Door",
+      "description": "A door stands in the middle of the road. If opened, the frame bursts with confetti, then disappears."
+    },
+    {
+      "title": "Chest with 100gp",
+      "description": "The party finds 100gp in a chest in the middle of the road."
     }
   ]
 }
