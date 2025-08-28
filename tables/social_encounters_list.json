@@ -396,6 +396,22 @@
     {
       "title": "Chest with 100gp",
       "description": "The party finds 100gp in a chest in the middle of the road."
+    },
+     {
+      "title": "The Whispering Willows",
+      "description": "A small grove of willow trees seems to be softly whispering a language the party does not understand."
+    },
+    {
+      "title": "A Mysterious Portal",
+      "description": "A shimmering portal flickers into existence, smelling faintly of ozone and wild magic. Where does it lead?"
+    },
+    {
+      "title": "An Old Hermit's Advice",
+      "description": "A wise, old hermit appears and offers the party cryptic advice about their current quest."
+    },
+    {
+      "title": "The Storm Elemental",
+      "description": "The skies darken and a whirlwind of wind and lightning, taking the form of an elemental, appears."
     }
   ]
 }
