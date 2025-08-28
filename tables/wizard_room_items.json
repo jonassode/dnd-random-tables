@@ -1,0 +1,25 @@
+{
+  "name": "wizard_room_items",
+  "items": [
+    {
+      "title": "A Book of Endless Spells",
+      "description": "A dusty, leather-bound tome that, when opened, reveals an infinite number of pages, each filled with incomprehensible symbols."
+    },
+    {
+      "title": "An Ever-Ticking Clock",
+      "description": "A small clock on the wall that ticks out of sync with time itself, sometimes moving backwards or skipping minutes."
+    },
+    {
+      "title": "A Glowing Orb",
+      "description": "A faintly glowing, pulsating crystal orb floating in the center of the room. It feels warm to the touch."
+    },
+    {
+      "title": "A Caged Glimmer",
+      "description": "A small, delicate glass cage containing a single, captured wisp of starlight that flits about restlessly."
+    },
+    {
+      "title": "A Jar of Floating Eyes",
+      "description": "A preserved jar on a shelf contains several small, detached eyeballs that slowly drift around, blinking occasionally."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "city_encounters",
+  "items": [
+    {
+      "title": "A Shady Deal",
+      "description": "The party witnesses a back-alley deal go wrong between two thieves, leading to a frantic chase."
+    },
+    {
+      "title": "A Public Disturbance",
+      "description": "A rowdy group of drunken adventurers has started a tavern brawl, causing chaos in the streets."
+    },
+    {
+      "title": "A Crying Child",
+      "description": "The party finds a child sobbing, claiming a monster stole their favorite toy and ran into the sewers."
+    }
+  ]
+}

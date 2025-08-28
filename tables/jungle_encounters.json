@@ -1,0 +1,25 @@
+{
+  "name": "jungle_encounters",
+  "items": [
+    {
+      "title": "A Tribe of Grungs",
+      "description": "A small tribe of colorful frog-like Grungs ambush the party, attempting to coat their weapons in poison."
+    },
+    {
+      "title": "The Wandering Merchant",
+      "description": "A kind traveling merchant offers the party strange and unusual wares, including rare potions and a mysterious map."
+    },
+    {
+      "title": "An Ancient Ruin",
+      "description": "The party stumbles upon the weathered remains of a forgotten temple, with an ominous hum resonating from within."
+    },
+    {
+      "title": "A Hungry Cave Troll",
+      "description": "A massive, reclusive troll blocks the party's path, looking for its next meal."
+    },
+    {
+      "title": "Lost Owlbear Cub",
+      "description": "The party finds a frightened owlbear cub, abandoned and alone. Its mother is likely not far behind."
+    }
+  ]
+}
