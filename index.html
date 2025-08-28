@@ -4,44 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&D Random Table Generator</title>
-    <!-- Use Tailwind CSS for easy and responsive styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Apply a nice D&D-themed background and a smooth font */
-        body {
-            background-color: #1a202c; /* Dark slate background */
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0; /* Light text color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2d3748;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4a5568;
-            border-radius: 4px;
-        }
-
-        /* Define a custom class for the "hidden" state */
-        .hidden {
-            display: none;
-        }
+        body { background-color: #1a202c; font-family: 'Inter', sans-serif; color: #e2e8f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1rem; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d3748; }
+        ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="selection:bg-teal-500 selection:text-white">
-
-    <!-- Main container for the app, with centered and responsive layout -->
     <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-xl shadow-2xl space-y-8 flex flex-col items-center">
-        <!-- Title and description section -->
         <header class="text-center space-y-2">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
                 Random Table Generator
@@ -50,143 +23,55 @@
                 Generate a random result from a custom list.
             </p>
         </header>
-
-        <!-- Selection Screen - visible initially -->
         <div id="selection-screen" class="w-full space-y-4 text-center">
             <p class="text-xl font-semibold text-gray-300">
                 Choose a table to roll on:
             </p>
-            <!-- This div will be populated with buttons by JavaScript -->
-            <div id="table-buttons" class="flex flex-col items-center space-y-4">
-                <!-- Buttons will be dynamically added here -->
-            </div>
+            <div id="table-buttons" class="flex flex-col items-center space-y-4"></div>
         </div>
-
-        <!-- Encounter Screen - hidden initially -->
         <div id="encounter-screen" class="w-full hidden space-y-4">
-            <!-- Encounter display area -->
-            <div id="result-display" class="w-full min-h-[150px] p-6 bg-gray-700 border border-gray-600 rounded-lg shadow-inner flex flex-col justify-center items-center text-center">
-                <!-- Content will be injected here by JavaScript -->
-            </div>
-
+            <div id="result-display" class="w-full min-h-[150px] p-6 bg-gray-700 border border-gray-600 rounded-lg shadow-inner flex flex-col justify-center items-center text-center"></div>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <!-- Button to generate a new result of the same type -->
-                <button id="reroll-btn" class="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                <button id="reroll-btn" class="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-opacity-50">
                     Reroll on this table
                 </button>
-                <!-- Button to go back to the selection screen -->
-                <button id="back-btn" class="px-8 py-3 bg-gray-600 hover:bg-gray-700 text-gray-300 font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50">
+                <button id="back-btn" class="px-8 py-3 bg-gray-600 hover:bg-gray-700 text-gray-300 font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-opacity-50">
                     Choose New Table
                 </button>
             </div>
         </div>
     </div>
-
     <script>
-        // Self-contained "config file" as a JavaScript object with categorized tables.
-        // To add a new list, just add a new key-value pair to this object.
-        const contentTables = {
-            jungle_encounters: [
-                {
-                    title: "A Tribe of Grungs",
-                    description: "A small tribe of colorful frog-like Grungs ambush the party, attempting to coat their weapons in poison."
-                },
-                {
-                    title: "The Wandering Merchant",
-                    description: "A kind traveling merchant offers the party strange and unusual wares, including rare potions and a mysterious map."
-                },
-                {
-                    title: "An Ancient Ruin",
-                    description: "The party stumbles upon the weathered remains of a forgotten temple, with an ominous hum resonating from within."
-                },
-                {
-                    title: "A Hungry Cave Troll",
-                    description: "A massive, reclusive troll blocks the party's path, looking for its next meal."
-                },
-                {
-                    title: "Lost Owlbear Cub",
-                    description: "The party finds a frightened owlbear cub, abandoned and alone. Its mother is likely not far behind."
-                }
-            ],
-            social_encounters: [
-                {
-                    title: "The Whispering Willows",
-                    description: "A small grove of willow trees seems to be softly whispering a language the party does not understand."
-                },
-                {
-                    title: "A Mysterious Portal",
-                    description: "A shimmering portal flickers into existence, smelling faintly of ozone and wild magic. Where does it lead?"
-                },
-                {
-                    title: "A Skeletal Ambush",
-                    description: "Three skeletons, their bones clattering, rise from the ground to attack the party."
-                },
-                {
-                    title: "An Old Hermit's Advice",
-                    description: "A wise, old hermit appears and offers the party cryptic advice about their current quest."
-                },
-                {
-                    title: "The Storm Elemental",
-                    description: "The skies darken and a whirlwind of wind and lightning, taking the form of an elemental, appears."
-                }
-            ],
-            city_encounters: [
-                {
-                    title: "A Shady Deal",
-                    description: "The party witnesses a back-alley deal go wrong between two thieves, leading to a frantic chase."
-                },
-                {
-                    title: "A Public Disturbance",
-                    description: "A rowdy group of drunken adventurers has started a tavern brawl, causing chaos in the streets."
-                },
-                {
-                    title: "A Crying Child",
-                    description: "The party finds a child sobbing, claiming a monster stole their favorite toy and ran into the sewers."
-                }
-            ],
-            wizard_room_items: [
-                {
-                    title: "A Book of Endless Spells",
-                    description: "A dusty, leather-bound tome that, when opened, reveals an infinite number of pages, each filled with incomprehensible symbols."
-                },
-                {
-                    title: "An Ever-Ticking Clock",
-                    description: "A small clock on the wall that ticks out of sync with time itself, sometimes moving backwards or skipping minutes."
-                },
-                {
-                    title: "A Glowing Orb",
-                    description: "A faintly glowing, pulsating crystal orb floating in the center of the room. It feels warm to the touch."
-                },
-                {
-                    title: "A Caged Glimmer",
-                    description: "A small, delicate glass cage containing a single, captured wisp of starlight that flits about restlessly."
-                },
-                {
-                    title: "A Jar of Floating Eyes",
-                    description: "A preserved jar on a shelf contains several small, detached eyeballs that slowly drift around, blinking occasionally."
-                }
-            ]
-        };
+        // Discover all table JSON files in /tables/
+        // In a real server, you might fetch a list from the server or keep an index file.
+        // For static hosting, maintain a manifest:
+        const TABLE_MANIFEST = [
+            "jungle_encounters.json",
+            "social_encounters.json",
+            "city_encounters.json",
+            "wizard_room_items.json"
+        ];
 
-        // Global variable to hold the currently selected table type.
+        // This will be filled with { tableName: [items] }
+        const contentTables = {};
         let currentTableType = null;
 
-        /**
-         * Dynamically generates the buttons for each content table.
-         */
+        async function loadAllTables() {
+            const promises = TABLE_MANIFEST.map(async (filename) => {
+                const response = await fetch(`tables/${filename}`);
+                if (!response.ok) throw new Error(`Failed to load ${filename}`);
+                const data = await response.json();
+                contentTables[data.name] = data.items;
+            });
+            await Promise.all(promises);
+        }
+
         function renderButtons() {
             const buttonContainer = document.getElementById('table-buttons');
-            // Clear any existing buttons to prevent duplicates
             buttonContainer.innerHTML = '';
-            
-            // Get all the keys (table names) from the contentTables object.
             const tableNames = Object.keys(contentTables);
-
             tableNames.forEach(tableName => {
-                // Create a button element.
                 const button = document.createElement('button');
-                
-                // Add styling classes based on a simple theme. You can expand this if you want more variety.
                 let buttonClass = '';
                 if (tableName === 'jungle_encounters') {
                     buttonClass = 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 focus:ring-green-500';
@@ -197,62 +82,34 @@
                 } else if (tableName === 'wizard_room_items') {
                     buttonClass = 'bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 focus:ring-purple-500';
                 } else {
-                    // Default style for new tables
                     buttonClass = 'bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 focus:ring-gray-500';
                 }
-
                 button.className = `px-8 py-3 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-opacity-50 ${buttonClass}`;
-                
-                // Capitalize and format the table name for display
                 button.textContent = `${tableName.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} Table`;
-                
                 button.dataset.type = tableName;
-
-                // Add an event listener to the new button.
                 button.addEventListener('click', (event) => {
                     const tableType = event.currentTarget.dataset.type;
                     generateResult(tableType);
                 });
-
-                // Append the new button to the container.
                 buttonContainer.appendChild(button);
             });
         }
 
-        /**
-         * This function displays the selection screen and hides the result screen.
-         */
         function showSelectionScreen() {
             document.getElementById('selection-screen').classList.remove('hidden');
             document.getElementById('encounter-screen').classList.add('hidden');
         }
 
-        /**
-         * This function handles the logic for generating and displaying a new result from a specific table.
-         */
         function generateResult(tableType) {
-            // Get the selected content table array.
             const contentList = contentTables[tableType];
-            
-            // Check if the list exists and has content.
             if (!contentList || contentList.length === 0) {
-                // Use a custom message box instead of alert()
                 const displayEl = document.getElementById('result-display');
                 displayEl.innerHTML = `<p class="text-xl font-semibold text-red-400">Error: No content found for this category!</p>`;
-                console.error(`Content list for type "${tableType}" not found or is empty.`);
                 return;
             }
-
-            // Generate a random index based on the number of items in the array.
             const randomIndex = Math.floor(Math.random() * contentList.length);
-            
-            // Get the randomly selected item object.
             const randomItem = contentList[randomIndex];
-            
-            // Get the display element from the HTML document.
             const displayEl = document.getElementById('result-display');
-
-            // Update the HTML content of the display element.
             displayEl.innerHTML = `
                 <h2 class="text-2xl sm:text-3xl font-bold text-teal-300 mb-2">
                     ${randomItem.title}
@@ -261,37 +118,25 @@
                     ${randomItem.description}
                 </p>
             `;
-
-            // Update the global variable to remember which type was selected.
             currentTableType = tableType;
-            
-            // Show the result screen and hide the selection screen.
             document.getElementById('selection-screen').classList.add('hidden');
             document.getElementById('encounter-screen').classList.remove('hidden');
         }
-        
-        // Wait for the entire document to load before running our script.
-        document.addEventListener('DOMContentLoaded', () => {
-            // Call renderButtons to initially populate the selection screen.
-            renderButtons();
 
-            // Get references for the buttons on the result screen.
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadAllTables();
+                renderButtons();
+            } catch (e) {
+                document.getElementById('table-buttons').innerHTML =
+                    `<p class="text-red-400 font-bold">Failed to load tables: ${e.message}</p>`;
+            }
             const rerollBtn = document.getElementById('reroll-btn');
             const backBtn = document.getElementById('back-btn');
-
-            // Add click event listeners for the new buttons on the result screen.
-            if (rerollBtn) {
-                rerollBtn.addEventListener('click', () => {
-                    // Reroll using the last selected table type.
-                    if (currentTableType) {
-                        generateResult(currentTableType);
-                    }
-                });
-            }
-
-            if (backBtn) {
-                backBtn.addEventListener('click', showSelectionScreen);
-            }
+            if (rerollBtn) rerollBtn.addEventListener('click', () => {
+                if (currentTableType) generateResult(currentTableType);
+            });
+            if (backBtn) backBtn.addEventListener('click', showSelectionScreen);
         });
     </script>
 </body>
